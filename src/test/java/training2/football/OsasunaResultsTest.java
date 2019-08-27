@@ -17,6 +17,6 @@ public class OsasunaResultsTest extends BaseTest {
         santanderPage.goToResults();
 
         SantanderResultsPage santanderResultsPage = new SantanderResultsPage(getDriver());
-        santanderResultsPage.printMatchday();
+        //santanderResultsPage.printMatchday();
     }
 }

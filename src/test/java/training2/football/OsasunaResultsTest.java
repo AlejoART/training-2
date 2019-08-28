@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class OsasunaResultsTest extends BaseTest {
 
     @Test
-    public void checkOsasunaResuts() throws InterruptedException {
+    public void checkOsasunaResuts(){
 
         HomePage homePage = new HomePage(getDriver());
         homePage.goToLigaSantander();
@@ -17,6 +17,6 @@ public class OsasunaResultsTest extends BaseTest {
         santanderPage.goToResults();
 
         SantanderResultsPage santanderResultsPage = new SantanderResultsPage(getDriver());
-        //santanderResultsPage.printMatchday();
+        santanderResultsPage.checkMatchdayIsPlayed();
     }
 }

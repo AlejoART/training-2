@@ -20,21 +20,30 @@ public class SantanderResultsPage extends BasePage {
     }
 
     public String[] getTheCurrentMatchdayMatch(String teamName){
+        matchesListElement = findElements(By.cssSelector("div[class='styled__ResultContainer-qe32sx-6 iYHKYB']"));
         String [] match = new String[3];
         String team1 = null;
         String team2 = null;
         String result = null;
         for (int i = 0; i < matchesListElement.size(); i++) {
             List<WebElement> eachMatch = matchesListElement.get(i).findElements(By.tagName("p"));
-            if(getText(eachMatch.get(0)).contains(teamName.toUpperCase())){
+            if(getText(eachMatch.get(0)).contains(teamName.toUpperCase()) && !getText(eachMatch.get(1)).equals("VS")){
                 team1 = getText(eachMatch.get(0));
                 result = getText(eachMatch.get(1));
                 team2 = getText(eachMatch.get(2));
             }
-            if (getText(eachMatch.get(2)).contains(teamName.toUpperCase())) {
+            else{
+                moveToPreviousMatchday(teamName);
+                break;
+            }
+            if (getText(eachMatch.get(2)).contains(teamName.toUpperCase()) && !getText(eachMatch.get(1)).equals("VS")) {
                 team1 = getText(eachMatch.get(0));
                 result = getText(eachMatch.get(1));
                 team2 = getText(eachMatch.get(2));
+            }
+            else{
+                moveToPreviousMatchday(teamName);
+                break;
             }
         }
         match[0] = team1;
@@ -42,14 +51,6 @@ public class SantanderResultsPage extends BasePage {
         match[2] = team2;
 
         return match;
-    }
-
-    public void checkMatchdayIsPlayed(String teamName){
-        String [] match = getTheCurrentMatchdayMatch(teamName);
-        if(match[1].equals("VS"))
-            moveToPreviousMatchday(teamName);
-
-        //DO the method for locating the X team and its score
     }
 
     public void moveToPreviousMatchday(String teamName){
@@ -65,7 +66,7 @@ public class SantanderResultsPage extends BasePage {
             WebDriverWait ewait1 = new WebDriverWait(driver,10);
             ewait1.until(ExpectedConditions.visibilityOfElementLocated(resultsContainerLocator));
 
-            checkMatchdayIsPlayed(teamName);
+            getTheCurrentMatchdayMatch(teamName);
         }
 
     }

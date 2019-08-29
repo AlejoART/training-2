@@ -22,7 +22,16 @@ public class SantanderPage extends BasePage {
 
         click(resultsLocator);
 
-        //Thread.sleep(2000);
+        WebDriverWait ewait2 = new WebDriverWait(driver,10);
+        ewait2.until(ExpectedConditions.visibilityOfElementLocated(resultsContainerLocator));
+    }
+
+    public void goToClassification(){
+        WebDriverWait ewait1 = new WebDriverWait(driver,10);
+        ewait1.until(ExpectedConditions.visibilityOfElementLocated(resultsLocator));
+
+        click(clasifficationLocator);
+
         WebDriverWait ewait2 = new WebDriverWait(driver,10);
         ewait2.until(ExpectedConditions.visibilityOfElementLocated(resultsContainerLocator));
     }

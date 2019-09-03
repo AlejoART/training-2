@@ -6,14 +6,6 @@ public class Team {
     private int playedGames;
     private int wonGames;
 
-    public Team(String name, int score, int playedGames, int wonGames) {
-        super();
-        this.name = name;
-        this.score = score;
-        this.playedGames = playedGames;
-        this.wonGames = wonGames;
-    }
-
     public Team() {
         super();
     }
@@ -31,7 +23,7 @@ public class Team {
     }
 
     public void setScore(int score) {
-        this.score = score += score;
+        this.score = score;
     }
 
     public int getPlayedGames() {

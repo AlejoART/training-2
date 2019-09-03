@@ -6,6 +6,7 @@ public class Match {
     String result;
     int resultTeam1;
     int resultTeam2;
+    int points = 0;
 
     public Match(String team1, String team2, String result) {
         super();
@@ -57,28 +58,27 @@ public class Match {
     }
 
     public int addPointsToTeam1(int result1, int result2){
-        int points = 0;
-        if(this.resultTeam1 == this.resultTeam2){
+
+        if(result1 == result2){
             points += 1;
         }
-        if(this.resultTeam1 > this.resultTeam2){
+        if(result1 > result2){
             points += 3;
         }
-        if(this.resultTeam1 < this.resultTeam2){
+        if(result1 < result2){
             points += 0;
         }
         return points;
     }
 
     public int addPointsToTeam2(int result1, int result2){
-        int points = 0;
-        if(this.resultTeam1 == this.resultTeam2){
+        if(result1 == result2){
             points += 1;
         }
-        if(this.resultTeam2 > this.resultTeam1){
+        if(result2 > result1){
             points += 3;
         }
-        if(this.resultTeam2 < this.resultTeam1){
+        if(result2 < result1){
             points += 0;
         }
         return points;

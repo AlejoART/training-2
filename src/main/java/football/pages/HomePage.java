@@ -2,13 +2,11 @@ package football.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
 
-    private By logoLocator = By.cssSelector("path[class='llv-ball llv-backball']");
     private By ligaSantanderLocator = By.cssSelector("div[class='styled__MenuItemContainer-hjtxxq-0 giGkww']");
 
 

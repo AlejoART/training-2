@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class SantanderPage extends BasePage {
     private By resultsLocator = By.xpath("//*[@id=\"__next\"]/div/header/div[2]/div/div[2]/div/div/div[2]/span/a");
     private By clasifficationLocator = By.xpath("//*[@id=\"__next\"]/div/header/div[2]/div/div[2]/div/div/div[3]/span/a");
-    private By dropdownText = By.xpath("//*[@id=\"dropdownTitleId_211\"]/div/p");
     private By resultsContainerLocator = By.cssSelector("div[class='show styled__ShowLoadedContainer-sc-191gwr0-0 khRXzW']");
 
     public SantanderPage(WebDriver driver) {

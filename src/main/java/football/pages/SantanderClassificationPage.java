@@ -26,9 +26,10 @@ public class SantanderClassificationPage extends BasePage {
         teamsList = findElements(By.cssSelector("div[class='styled__ShieldContainer-x1xxh6-0 fTVURw']"));
         teamRow = findElements(By.cssSelector("div[class='styled__StandingTabBody-d1op5e-8 fMRhvA']"));
         for (int i = 0; i < teamsList.size(); i++) {
-            if(getText(teamsList.get(i)).equals(teamName))
+            if(getText(teamsList.get(i)).equals(teamName)) {
                 score = Integer.parseInt(getText(teamRow.get(i).findElements(By.cssSelector("div[class='styled__TableBody-d1op5e-9 ksrmJh']")).get(0)));
-            break;
+                break;
+            }
         }
         return score;
     }

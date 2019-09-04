@@ -2,13 +2,9 @@ package training2.football;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BaseTest {
 
@@ -19,7 +15,7 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://www.laliga.com");
-        //setLanguage();
+        setLanguage();
     }
 
     @AfterSuite
@@ -32,10 +28,9 @@ public class BaseTest {
     }
 
     public void setLanguage(){
-        List<WebElement> p = driver.findElements(By.cssSelector("styled__TextRegularContainer-sc-12cic8i-0 iqUYfN"));
-        By languageDropdown = By.id("dropdownTitleId_1622");
+        By languageDropdown = By.cssSelector("div[class='styled__DropdownContainer-owktxg-6 beDdRJ']");
         By spanish = By.cssSelector("li[class='styled__Item-sc-1yaayks-5 deobay']");
-        if(p.get(1).getText().equals("English")){
+        if(driver.findElement(languageDropdown).getText().equals("English")){
             driver.findElement(languageDropdown).click();
             driver.findElement(spanish).click();
         }

@@ -15,6 +15,7 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://www.laliga.com");
+        driver.manage().window().maximize();
         setLanguage();
     }
 

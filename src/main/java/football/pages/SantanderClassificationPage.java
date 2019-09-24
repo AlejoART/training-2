@@ -23,7 +23,7 @@ public class SantanderClassificationPage extends BasePage {
         WebDriverWait ewait1 = new WebDriverWait(driver,10);
         ewait1.until(ExpectedConditions.elementToBeClickable(singleRow));
 
-        teamsList = findElements(By.cssSelector("div[class='styled__ShieldContainer-x1xxh6-0 fTVURw']"));
+        teamsList = findElements(By.cssSelector("div[class='styled__ShieldContainer-x1xxh6-0 kEmSMW']"));
         teamRow = findElements(By.cssSelector("div[class='styled__StandingTabBody-d1op5e-8 fMRhvA']"));
         for (int i = 0; i < teamsList.size(); i++) {
             if(getText(teamsList.get(i)).equals(teamName)) {

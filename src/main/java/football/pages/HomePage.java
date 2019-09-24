@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
 
-    private By ligaSantanderLocator = By.cssSelector("div[class='styled__MenuItemContainer-hjtxxq-0 giGkww']");
+    private By ligaSantanderLocator = By.cssSelector("div[class='styled__MenuItemContainer-hjtxxq-0 jQIhbz']");
 
 
     public HomePage(WebDriver driver) {
